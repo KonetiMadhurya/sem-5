@@ -1,0 +1,76 @@
+<html>
+<head>
+<title> Login page</title>
+</head>
+<style>
+body{
+margin: 0;
+padding: 0;
+background-color: white;
+font-family: 'Arial';
+}
+.login{
+width: 400px;
+margin:auto;
+margin: 140px 0px 0px 500px;
+overflow: hidden;
+padding:50px;
+background: lightblue;
+border-radius:20px;
+}
+h1{
+text-align: center;
+padding: 20px;
+}
+label{
+    font-size : 20px;
+margin-left:40px;
+}
+#uname{
+width:200px;
+height:30px;
+border:none;
+border-radius:5px;
+padding-left:20px;
+margin-left:15px;
+}
+#pass{
+width:200px;
+height:30px;
+border:none;
+border-radius:5px;
+padding-left:20px;
+margin-left:23px;
+}
+#log{
+width:200px;
+height:30px;
+border:none;
+border-radius:5px;
+padding-left:20px;
+margin-left: 95px;
+}
+a{
+float:right;
+}
+</style>
+<body>
+<div class="login">
+<form id ="login">
+<h1> Login Form</h1><br>
+<label> UserName </label>
+<input type = "text" id = "uname" name = "username" placeholder="Username">
+<br><br>
+<label> Password </label>
+<input type = "password" id = "pass" name = "password" placeholder="Password">
+<br><br>
+<input type = "button" id = "log" name ="buttton" value = "LogIn">
+<br><br>
+<input type = "checkbox" id = "check" >
+<span> Remember me</span>
+<br><br>
+<a href ="#password.html">Forget Password ?</a>
+</form>
+</div>
+</body>
+</html>
