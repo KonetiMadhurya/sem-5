@@ -1,0 +1,63 @@
+router.js
+
+const express = require ("express"); 
+var app = express(); 
+var port = 9000; 
+var router1 = express.Router(); 
+var router2 = express.Router(); 
+var router3 = express.Router(); 
+router1.get("/user", function (re1, res, next) { 
+ console.log("user router working"); 
+ res.end(); 
+}); 
+router2.get("/student", function (re1, res, next) { 
+ console.log("Student Router"); 
+ res.end(); 
+}); 
+router1.get("/admin", function (re1, res, next) { 
+ console.log("Admin router"); 
+ res.end(); 
+}); 
+app.use(router1); 
+app.use(router2); 
+app.use(router3); 
+app.listen(port, function (err) { 
+ if(err) console.log(err); 
+ console.log("Server on port ", port); 
+}); 
+
+getex.js
+
+var express = require('express'); 
+var app = express(); 
+app.use(express.static('public')); 
+ 
+app.get('/index.html', function (req, res) { 
+ res.sendFile( __dirname + "/" + "index.html" ); 
+}); 
+app.get('/process_get', function (req, res) { 
+response = { 
+ first_name:req.query.first_name, 
+ last_name:req.query.last_name 
+ }; 
+ console.log(response); 
+ res.end(JSON.stringify(response)); 
+}); 
+var server = app.listen(8082, function () { 
+ 
+ var host = server.address().address 
+ var port = server.address().port 
+ console.log("Example app listening at http://%s:%s", host, port) 
+}); 
+
+index.html
+
+<html>
+<body>
+ <form action="http://127.0.0.1:8082/process_get" method="GET">
+ First Name: <input type="text" name="first_name"> <br>
+ Last Name: <input type="text" name="last_name">
+ <input type="submit" value="Submit">
+ </form>
+</body>
+</html>
